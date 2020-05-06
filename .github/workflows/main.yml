@@ -19,12 +19,12 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+      
     # Runs a single command using the runners shell
     - name: hw_1:SQL
       run: |
         cd hw1
-        sudo apt-get install sqlite3 libsqlite3-dev gunzip
+        sudo apt-get install sqlite3 libsqlite3-dev
         wget https://15445.courses.cs.cmu.edu/fall2019/files/imdb-cmudb2019.db.gz
         gunzip imdb-cmudb2019.db.gz
         sqlite3 imdb-cmudb2019.db
