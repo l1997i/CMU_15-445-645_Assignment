@@ -7,7 +7,7 @@
  */ 
 
 WITH
-    MH(person_id) AS (
+    MH(title_id) AS (
         SELECT DISTINCT(crew.title_id)
         FROM people
         JOIN crew
