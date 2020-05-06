@@ -23,7 +23,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: hw_1:SQL
       run: |
-        cd hw_1
+        cd hw1
         sudo apt-get install sqlite3 libsqlite3-dev
         wget https://15445.courses.cs.cmu.edu/fall2019/files/imdb-cmudb2019.db.gz
         gunzip imdb-cmudb2019.db.gz
