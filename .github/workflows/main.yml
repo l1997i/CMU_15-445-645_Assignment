@@ -25,10 +25,10 @@ jobs:
       run: |
         cd hw1
         sudo apt-get install sqlite3 libsqlite3-dev
-        wget imdb.gz https://15445.courses.cs.cmu.edu/fall2019/files/imdb-cmudb2019.db.gz
+        wget "https://15445.courses.cs.cmu.edu/fall2019/files/imdb-cmudb2019.db.gz"
         echo "wget done"
-        md5sum imdb-cmudb2019.db.gz 
-        gzip -d imdb-cmudb2019.db.gz
+        md5sum "imdb-cmudb2019.db.gz"
+        gzip -d "imdb-cmudb2019.db.gz"
         sqlite3 imdb-cmudb2019.db
         CREATE INDEX ix_people_name ON people (name);
         CREATE INDEX ix_titles_type ON titles (type);
