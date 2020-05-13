@@ -8,6 +8,13 @@
  * use primary titles (ascending) as tie-breaker.
  */ 
 
-SELECT type, primary_title, MAX(runtime_minutes) AS runtime_minutes
+WITH types(type, runtime_minutes) AS(
+    SELECT type, MAX(runtime_minutes)
     FROM titles
-    ORDER BY type ASC, primary_title ASC;
+    GROUP BY type)
+
+SELECT titles.type, titles.primary_title, titles.runtime_minutes AS runtime_minutes
+    FROM titles
+    JOIN types
+    ON titles.runtime_minutes == types.runtime_minutes AND titles.type == types.type
+    ORDER BY titles.type ASC, primary_title ASC;
